@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seadanya Kopi | Premium Coffee Experience</title>
+    <link rel="icon" href="images/123456.jpeg" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Seadanya<span>Kopi</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#location">Location</a></li>
+                <li id="adminDashLink" style="display: none;"><a href="#admin-dashboard">Dashboard Admin</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="cartBtn" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCount">0</span>
+                </button>
+                <div class="user-profile">
+                    <button id="loginBtn" class="btn-login"><i class="fas fa-user"></i> <span id="userStatus">Login</span></button>
+                    <div id="userDropdown" class="dropdown-content">
+                        <button id="loginCustomer">Masuk sebagai Pelanggan</button>
+                        <button id="loginAdmin">Masuk sebagai Barista</button>
+                        <button id="logoutBtn" style="display: none;">Logout</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Seadanya Kopi</h1>
+            <p>Menikmati kopi dengan cara sederhana namun istimewa.</p>
+            <a href="#menu" class="btn-primary">Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <!-- How to Order Section -->
+    <section id="how-to-order" class="how-to-order">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cara Pemesanan</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="order-steps">
+                <div class="step-item">
+                    <div class="step-icon">
+                        <i class="fas fa-hand-pointer"></i>
+                    </div>
+                    <h3>Pilih Varian</h3>
+                    <p>Cari es teh favoritmu dan klik tombol Pesan.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">
+                        <i class="fas fa-cart-plus"></i>
+                    </div>
+                    <h3>Isi Data</h3>
+                    <p>Cek keranjang, isi alamat pengiriman, dan pilih pembayaran.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">
+                        <i class="fas fa-glass-water"></i>
+                    </div>
+                    <h3>Siap Dinikmati</h3>
+                    <p>Tunggu sebentar, kurir kami akan mengantar kesegaran ke tempatmu!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Menu Kami</h2>
+                <div class="underline"></div>
+            </div>
+            <div id="menuGrid" class="menu-grid">
+                <!-- Data rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Section (Visible only for Admin) -->
+    <section id="admin-dashboard" class="admin-section" style="display: none;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Daftar Pesanan Masuk</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Item</th>
+                            <th>Total</th>
+                            <th>Alamat</th>
+                            <th>Metode Bayar</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderTableBody">
+                        <!-- Data rendered by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lokasi Kami</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="map-container">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d588.7743383224025!2d109.017192635882!3d-6.916188377135053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1767676372773!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Seadanya Kopi. Dibuat dengan cinta dan kafein.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar/Modal -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Keranjang Anda</h3>
+                <span class="close-cart">&times;</span>
+            </div>
+            <div id="cartItems" class="cart-items">
+                <!-- Data rendered by JS -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    Total: <span id="totalPrice">Rp 0</span>
+                </div>
+                <button id="checkoutBtn" class="btn-checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Form Modal -->
+    <div id="checkoutModal" class="checkout-form-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Detail Pengiriman</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="customerName">Nama Pemesan</label>
+                        <input type="text" id="customerName" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="customerAddress">Alamat Lengkap</label>
+                        <textarea id="customerAddress" required placeholder="Masukkan alamat pengiriman"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerWA">Nomor WhatsApp</label>
+                        <input type="tel" id="customerWA" required placeholder="Contoh: 08123456789">
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Metode Pembayaran</label>
+                        <select id="paymentMethod" required>
+                            <option value="Cash">Cash / COD</option>
+                            <option value="QRIS">QRIS (Simulasi)</option>
+                        </select>
+                    </div>
+                    
+                    <div id="qrisSection" class="qris-section" style="display: none;">
+                        <p>Scan QRIS di bawah ini untuk membayar:</p>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=SeadanyaKopiSimulasi" alt="QRIS Dummy">
+                    </div>
+
+                    <button type="submit" class="btn-confirm">Konfirmasi Pesanan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>
